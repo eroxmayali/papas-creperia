@@ -3,7 +3,7 @@ import javax.swing.*;
 import java.util.Random;
 import java.util.ArrayList;
 
-public class DotRaceArrayList extends JPanel {
+public class DotArray extends JPanel {
 
    private JFrame myFrame;
    private Random randGen = new Random();
@@ -13,7 +13,7 @@ public class DotRaceArrayList extends JPanel {
    int startLine = 50;
    // number of milliseconds (one thousanth of a second) to pause between each cycle
    int pauseTime = 15;
-   Dot winnaWinnaWinna; // who has won (or null if nobody)
+   Customer winnaWinnaWinna; // who has won (or null if nobody)
    int winnaEffectDiameter; // for the special effects at end
    int defaultDiameter = 70; // default diameter for the dot
 
@@ -24,10 +24,10 @@ public class DotRaceArrayList extends JPanel {
    int windowHeight; // this gets set in the constructor
 
    // This ArrayList holds the Dot objects in the race
-   ArrayList<Dot> dots = new ArrayList<Dot>();
+   ArrayList<Customer> dots = new ArrayList<Customer>();
 
    // constructor
-   public DotRaceArrayList() {
+   public DotArray() {
       initializeRacers();
       windowHeight = topBorder + (dots.size() * (defaultDiameter + border));
       
@@ -45,14 +45,14 @@ public class DotRaceArrayList extends JPanel {
                           // Or, try making this a random number...
       int k = 0;
       while (k < racerCount) {
-         Dot aDotObject = new Dot(randomName(), k, randomColor(), defaultDiameter);
+         Customer aDotObject = new Customer(randomName(), k, randomColor(), defaultDiameter);
          // FINISH THIS -- insert the Dot object to the dots ArrayList
 
       }
    }
 
    public void runRace() {
-      Dot mover;
+      Customer mover;
       int distance;
 
       winnaWinnaWinna = null;
@@ -69,18 +69,18 @@ public class DotRaceArrayList extends JPanel {
       System.out.println("And the winner is " + winnaWinnaWinna.getName() + "! . You won by : " + distanceWon(winnaWinnaWinna));
    }
 
-   public double distanceWon(Dot winner){
+   public double distanceWon(Customer winner){
        //FINISH THIS: loop over dots list...
        //find the second place Dot
        // subtract the winner distance from second place      
-   
+   return 0;
    }
    
    // This method returns the 'Dot' whose turn it is to move.
-   private Dot whoMoves() {
+   private Customer whoMoves() {
       int d = randGen.nextInt(dots.size()); // a number between 0 and one less than the number of dots
       // FINISH THIS: return the Dot pointed to by 'd'
- 
+ return null;
    }
    
    
@@ -119,7 +119,7 @@ public class DotRaceArrayList extends JPanel {
       
    }
 
-   public void drawRacer(Dot racer, Graphics g) {
+   public void drawRacer(Customer racer, Graphics g) {
       int topX = racer.getDistance() + border + startLine;
       int topY = topBorder + (racer.getRacerNumber() * defaultDiameter)
             + border;
