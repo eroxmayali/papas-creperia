@@ -15,7 +15,7 @@ public class Customer {
 
     public Customer() {
         this.name = randomName();
-        // this.size = size;
+        this.size = size();
         this.fill = randomFillings();
         this.top = randomToppings();
     }
@@ -24,9 +24,9 @@ public class Customer {
         return names.get(r.nextInt(names.size()));
      }
 
-    //  public String randomSize() {
-    //     return sizes.get(r.nextInt(sizes.size()));
-    //  }
+      public int randomSize() {
+         return sizes.get(r.nextInt(sizes.size()));
+      }
 
      public String randomFillings() {
         return fillings.get(r.nextInt(fillings.size()));
