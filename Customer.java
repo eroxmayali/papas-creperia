@@ -15,7 +15,7 @@ public class Customer {
 
     public Customer() {
         this.name = randomName();
-        this.size = size();
+        this.size = randomSize();
         this.fill = randomFillings();
         this.top = randomToppings();
     }
