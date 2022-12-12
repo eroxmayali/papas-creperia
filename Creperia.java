@@ -32,17 +32,27 @@ public void paintComponent (Graphics g) {
 } 
 
 
-    public int chooseSize(){
-        //int x = JOptionPane.showOptionDialog(null, message: "Choose a size.", 
-            //title: "Prep Station",
-            //JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, sizes, sizes[0]);
-            
-        return 0;
+    public String chooseSize(){
+        String[] sizes = {"Small", "Medium", "Large"};
+
+             int x = JOptionPane.showOptionDialog(null, "Choose a size.",
+                "Batter Station",
+                JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, sizes, sizes[0]);
+        if(x == 0){
+            return "you chose small";
+        }else if(x == 1){
+            return "you chose medium";
+        }else if(x == 2){
+            return "you chose large";
+        }else{
+            return null;
+        }
     }
+    
     
 
     public String chooseFilling(){
-String[] fillings = {"abc", "def", "ghi", "jkl"};
+String[] fillings = {"Nutella", "Sugar and Lemon", "Strawberry Jam", "Salted Caramel", "Cinnamon Sugar"};
 
         int x = JOptionPane.showOptionDialog(null, "Choose a filling.",
                 "Filling Station",
@@ -59,6 +69,23 @@ String[] fillings = {"abc", "def", "ghi", "jkl"};
         }else if(x==4){
             return "you chose cinnamon sugar";
         }else {
+            return null;
+        }
+    }
+
+    public String chooseTopping(){
+String[] toppings = {"Whipped Cream", "Banana", "Strawberry"};
+
+        int x = JOptionPane.showOptionDialog(null, "Choose a topping.",
+                "Filling Station",
+                JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, toppings, toppings[0]);
+        if(x == 0){
+            return "you chose whipped cream";
+        }else if(x == 1){
+            return "you chose banana";
+        }else if(x == 2){
+            return "you chose strawberry";
+        }else{
             return null;
         }
     }
