@@ -6,7 +6,7 @@ public class Customer {
 
     Random r = new Random();
 
-    private int size;
+    private String size;
     private String fill;
     private String top;
     private String name;
@@ -24,7 +24,7 @@ public class Customer {
         return names.get(r.nextInt(names.size()));
      }
 
-      public int randomSize() {
+      public String randomSize() {
          return sizes.get(r.nextInt(sizes.size()));
       }
 
@@ -36,11 +36,11 @@ public class Customer {
         return toppings.get(r.nextInt(toppings.size()));
      }
 
-    ArrayList<Integer> sizes = new ArrayList<Integer>(){
+    ArrayList<String> sizes = new ArrayList<String>(){
         {
-            add(0);
-            add(1);
-            add(2);
+            add("Small");
+            add("Medium");
+            add("Large");
         }
     };
 
@@ -80,7 +80,16 @@ ArrayList<String> toppings = new ArrayList<String>() {
     public String getName() {
         return(name);
     }
-
+      public String getSize() {
+        return(size);
+    }
+      public String getFilling() {
+        return(fill);
+    }
+      public String getTopping() {
+      return(top);
+  }
+      
 
 
 
